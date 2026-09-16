@@ -234,10 +234,12 @@ export function HeroSection({ onExplore, onContact }: HeroSectionProps) {
 
           {/* Master Headline: Clean solid white and cyan accent (No blurry neon glow) */}
           <h1 className="hero-master-title">
-            Developing <span className="cyan-text-clean">thoughts</span> into <br />
-            <span className="cyan-text-clean">code</span> creating <br />
-            full-stack flow<span className="cyan-dot-clean">.</span>
+            Thinking <span className="cyan-text-clean">unthinkable</span>  <br />
+            <span>then</span><br/>
+            Coding <span className="cyan-text-clean">unshakeable</span> <br />
+            Shipping unforgettable<span className="cyan-dot-clean">.</span>
           </h1>
+
 
           {/* Subtitle */}
           <p className="hero-summary-desc">

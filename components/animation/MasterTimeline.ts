@@ -14,7 +14,7 @@ export interface SectionTimelineConfig {
   // subSlogan: string;
 }
 
-// 6 Descent Milestones (TOP -> BOTTOM)
+// 7 Descent Milestones (TOP -> BOTTOM)
 export const DESCENT_SECTIONS: SectionTimelineConfig[] = [
   {
     index: 0,
@@ -23,11 +23,9 @@ export const DESCENT_SECTIONS: SectionTimelineConfig[] = [
     name: 'Hero',
     title: 'Hey, I\'m Thamil',
     startFrame: 0,
-    endFrame: 59,
+    endFrame: 51,
     startProgress: 0.0,
-    endProgress: 0.166,
-    // slogan: 'DREAM BUILD REPEAT',
-    // subSlogan: 'BIGGER THAN WHAT I IMAGINED',
+    endProgress: 0.142,
   },
   {
     index: 1,
@@ -35,12 +33,10 @@ export const DESCENT_SECTIONS: SectionTimelineConfig[] = [
     num: '02',
     name: 'About',
     title: 'About Me',
-    startFrame: 60,
-    endFrame: 119,
-    startProgress: 0.167,
-    endProgress: 0.333,
-    // slogan: 'TAKE THE LEAP',
-    // subSlogan: 'GOOD THINGS TAKE COURAGE',
+    startFrame: 52,
+    endFrame: 102,
+    startProgress: 0.143,
+    endProgress: 0.285,
   },
   {
     index: 2,
@@ -48,12 +44,10 @@ export const DESCENT_SECTIONS: SectionTimelineConfig[] = [
     num: '03',
     name: 'Skills',
     title: 'Skills & Stack',
-    startFrame: 120,
-    endFrame: 179,
-    startProgress: 0.334,
-    endProgress: 0.500,
-    // slogan: 'BIGGER IDEAS HIGHER POSSIBILITIES',
-    // subSlogan: 'SKILLS FUEL FREEDOM',
+    startFrame: 103,
+    endFrame: 153,
+    startProgress: 0.286,
+    endProgress: 0.428,
   },
   {
     index: 3,
@@ -61,12 +55,10 @@ export const DESCENT_SECTIONS: SectionTimelineConfig[] = [
     num: '04',
     name: 'Projects',
     title: 'Featured Works',
-    startFrame: 180,
-    endFrame: 239,
-    startProgress: 0.501,
-    endProgress: 0.666,
-    // slogan: 'IDEAS INTO IMPACT',
-    // subSlogan: 'HIGHER IDEAS BRIGHTER SOLUTIONS',
+    startFrame: 154,
+    endFrame: 204,
+    startProgress: 0.429,
+    endProgress: 0.571,
   },
   {
     index: 4,
@@ -74,29 +66,36 @@ export const DESCENT_SECTIONS: SectionTimelineConfig[] = [
     num: '05',
     name: 'Journey',
     title: 'Experience & Milestones',
-    startFrame: 240,
-    endFrame: 299,
-    startProgress: 0.667,
-    endProgress: 0.833,
-    // slogan: 'DISCIPLINE CREATES FREEDOM',
-    // subSlogan: 'CONSISTENCY CREATES FREEDOM',
+    startFrame: 205,
+    endFrame: 255,
+    startProgress: 0.572,
+    endProgress: 0.714,
   },
   {
     index: 5,
     id: 'section-5',
     num: '06',
+    name: 'Achievements',
+    title: 'Honors & Recognition',
+    startFrame: 256,
+    endFrame: 306,
+    startProgress: 0.715,
+    endProgress: 0.857,
+  },
+  {
+    index: 6,
+    id: 'section-6',
+    num: '07',
     name: 'Contact',
     title: 'Say Hello',
-    startFrame: 300,
+    startFrame: 307,
     endFrame: 359,
-    startProgress: 0.834,
+    startProgress: 0.858,
     endProgress: 1.0,
-    // slogan: 'SAME KID BIGGER DREAMS',
-    // subSlogan: 'LET\'S BUILD THE FUTURE',
   },
 ];
 
-// 6 Climbing Milestones (BOTTOM -> TOP)
+// 7 Climbing Milestones (BOTTOM -> TOP)
 export const CLIMB_SECTIONS: SectionTimelineConfig[] = [
   {
     index: 0,
@@ -105,11 +104,9 @@ export const CLIMB_SECTIONS: SectionTimelineConfig[] = [
     name: 'Ground Base',
     title: 'Rope Preparation',
     startFrame: 0,
-    endFrame: 59,
-    startProgress: 0.834,
+    endFrame: 51,
+    startProgress: 0.858,
     endProgress: 1.0,
-    // slogan: 'THE ASCENT BEGINS',
-    // subSlogan: 'PREPARATION MEETS PURPOSE',
   },
   {
     index: 1,
@@ -117,12 +114,10 @@ export const CLIMB_SECTIONS: SectionTimelineConfig[] = [
     num: '02',
     name: 'Lower Ridge',
     title: 'Grip & Launch',
-    startFrame: 60,
-    endFrame: 119,
-    startProgress: 0.667,
-    endProgress: 0.833,
-    // slogan: 'GOOD THINGS TAKE COURAGE',
-    // subSlogan: 'EVERY STEP ELEVATES',
+    startFrame: 52,
+    endFrame: 102,
+    startProgress: 0.715,
+    endProgress: 0.857,
   },
   {
     index: 2,
@@ -130,12 +125,10 @@ export const CLIMB_SECTIONS: SectionTimelineConfig[] = [
     num: '03',
     name: 'Rock Face',
     title: 'Rope Ascent',
-    startFrame: 120,
-    endFrame: 179,
-    startProgress: 0.501,
-    endProgress: 0.666,
-    // slogan: 'SKILLS FUEL FREEDOM',
-    // subSlogan: 'FOCUS DEFINES THE CLIMB',
+    startFrame: 103,
+    endFrame: 153,
+    startProgress: 0.572,
+    endProgress: 0.714,
   },
   {
     index: 3,
@@ -143,12 +136,10 @@ export const CLIMB_SECTIONS: SectionTimelineConfig[] = [
     num: '04',
     name: 'High Wall',
     title: 'Vertical Haul',
-    startFrame: 180,
-    endFrame: 239,
-    startProgress: 0.334,
-    endProgress: 0.500,
-    // slogan: 'HIGHER IDEAS BRIGHTER SOLUTIONS',
-    // subSlogan: 'RELENTLESS MOMENTUM',
+    startFrame: 154,
+    endFrame: 204,
+    startProgress: 0.429,
+    endProgress: 0.571,
   },
   {
     index: 4,
@@ -156,25 +147,32 @@ export const CLIMB_SECTIONS: SectionTimelineConfig[] = [
     num: '05',
     name: 'Snow Ridge',
     title: 'Peak Approach',
-    startFrame: 240,
-    endFrame: 299,
-    startProgress: 0.167,
-    endProgress: 0.333,
-    // slogan: 'CONSISTENCY CREATES FREEDOM',
-    // subSlogan: 'ALMOST AT THE SUMMIT',
+    startFrame: 205,
+    endFrame: 255,
+    startProgress: 0.286,
+    endProgress: 0.428,
   },
   {
     index: 5,
     id: 'section-5',
     num: '06',
+    name: 'Pinnacle Crest',
+    title: 'Acclaimed Ascent',
+    startFrame: 256,
+    endFrame: 306,
+    startProgress: 0.143,
+    endProgress: 0.285,
+  },
+  {
+    index: 6,
+    id: 'section-6',
+    num: '07',
     name: 'Summit Edge',
     title: 'Summit Arrival',
-    startFrame: 300,
+    startFrame: 307,
     endFrame: 359,
     startProgress: 0.0,
-    endProgress: 0.166,
-    // slogan: 'SAME KID BIGGER DREAMS',
-    // subSlogan: 'READY FOR THE NEXT EXPEDITION',
+    endProgress: 0.142,
   },
 ];
 
@@ -183,20 +181,22 @@ export const SECTION_TIMELINES = DESCENT_SECTIONS;
 export function getSectionIndexByProgress(p: number, mode: JourneyMode = 'leap'): number {
   const clamped = Math.max(0, Math.min(1, p));
   if (mode === 'leap') {
-    if (clamped >= 0.834) return 5;
-    if (clamped >= 0.667) return 4;
-    if (clamped >= 0.501) return 3;
-    if (clamped >= 0.334) return 2;
-    if (clamped >= 0.167) return 1;
+    if (clamped >= 0.858) return 6;
+    if (clamped >= 0.715) return 5;
+    if (clamped >= 0.572) return 4;
+    if (clamped >= 0.429) return 3;
+    if (clamped >= 0.286) return 2;
+    if (clamped >= 0.143) return 1;
     return 0;
   } else {
-    // In climb mode: scroll bottom (p=1) is Section 0 (Ground), scroll top (p=0) is Section 5 (Summit)
-    if (clamped >= 0.834) return 0;
-    if (clamped >= 0.667) return 1;
-    if (clamped >= 0.501) return 2;
-    if (clamped >= 0.334) return 3;
-    if (clamped >= 0.167) return 4;
-    return 5;
+    // In climb mode: scroll bottom (p=1) is Section 0 (Ground), scroll top (p=0) is Section 6 (Summit)
+    if (clamped >= 0.858) return 0;
+    if (clamped >= 0.715) return 1;
+    if (clamped >= 0.572) return 2;
+    if (clamped >= 0.429) return 3;
+    if (clamped >= 0.286) return 4;
+    if (clamped >= 0.143) return 5;
+    return 6;
   }
 }
 

@@ -17,7 +17,8 @@ export function Scrubber({ activeSection, onSelectSection, mode = 'leap' }: Scru
     { num: '03', label: 'Skills' },
     { num: '04', label: 'Projects' },
     { num: '05', label: 'Journey' },
-    { num: '06', label: 'Contact' },
+    { num: '06', label: 'Awards' },
+    { num: '07', label: 'Contact' },
   ];
 
   const climbSections = [
@@ -26,7 +27,8 @@ export function Scrubber({ activeSection, onSelectSection, mode = 'leap' }: Scru
     { num: '03', label: 'Ascent' },
     { num: '04', label: 'Haul' },
     { num: '05', label: 'Ridge' },
-    { num: '06', label: 'Summit' },
+    { num: '06', label: 'Pinnacle' },
+    { num: '07', label: 'Summit' },
   ];
 
   const sections = mode === 'leap' ? leapSections : climbSections;

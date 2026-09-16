@@ -92,43 +92,19 @@ export function AboutSection({ mode, onExplore, onContact }: AboutSectionProps) 
         {/* Right Side: Rounded Mountain Visual Card with Dock */}
         <div className="about-card-col">
           <div className="about-mountain-card">
-            {/* Background Mountain Climber Image */}
+            {/* Background Image */}
             <div
               className="about-card-bg"
-              style={{ backgroundImage: `url('/images/about-mountain.jpg')` }}
+              style={{ backgroundImage: `url('/images/about%20image.png')` }}
             />
 
             {/* Subtle Gradient Scrim on Card */}
             <div className="about-card-overlay" />
 
-            {/* Top Left Handwritten Script Quote */}
-            <div className="about-card-quote">
-              <span className="quote-script">&ldquo;Curious mind.</span>
-              <span className="quote-script">Better solutions.&rdquo;</span>
-              <svg className="quote-underline-svg" viewBox="0 0 120 20" fill="none">
-                <path
-                  d="M4 14 Q 55 4, 116 12"
-                  stroke="#0284c7"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </div>
+           
 
             {/* Bottom Floating Glass Dock */}
-            <div className="about-card-dock">
-              {traits.map((t) => {
-                const Icon = t.icon;
-                return (
-                  <div key={t.name} className="dock-item">
-                    <div className="dock-icon-box">
-                      <Icon size={18} className="dock-icon" />
-                    </div>
-                    <span className="dock-label">{t.name}</span>
-                  </div>
-                );
-              })}
-            </div>
+           
           </div>
         </div>
       </div>

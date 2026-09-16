@@ -465,7 +465,7 @@ export function FrameSequenceCanvas({
         <div className="frame-loader-overlay">
           <div className="frame-loader-content">
             <div className="frame-loader-brand">THAMIL ARASAN</div>
-            <div className="frame-loader-title">INITIALIZING CINEMATIC EXPERIENCE</div>
+            <div className="frame-loader-title">INITIALIZING JOURNEY EXPERIENCE</div>
             <div className="frame-loader-bar-bg">
               <div
                 className="frame-loader-bar-fill"
@@ -474,7 +474,7 @@ export function FrameSequenceCanvas({
             </div>
             <div className="frame-loader-status">
               <span>{loadProgress}%</span>
-              <span>CHUNK 01 / 06 READY</span>
+              <span> LOADING ...</span>
             </div>
           </div>
         </div>

@@ -11,10 +11,14 @@ interface ProjectModalProps {
 }
 
 const projectImages: Record<string, string> = {
-  peakflow: '/images/project_parkeasy.jpg',
-  nexadapt: '/images/project_mediapp.jpg',
-  himavathi: '/images/project_nimmathi.jpg',
-  'more-projects': '/images/project_more.jpg',
+  smartbus: '/images/project_smartbus.jpg',
+  smartparking: '/images/project_smartparking.jpg',
+  messmate: '/images/project_messmate.jpg',
+  anthurium: '/images/project_anthurium.jpg',
+  gdgsync: '/images/project_gdgsync.jpg',
+  journalforge: '/images/project_journalforge.jpg',
+  peakflow: '/images/project_peakflow.jpg',
+  nexadopt: '/images/project_nexadopt.jpg',
 };
 
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
@@ -34,7 +38,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   if (!project) return null;
 
-  const imageSrc = projectImages[project.id] || '/images/project_parkeasy.jpg';
+  const imageSrc = projectImages[project.id] || '/images/project_smartbus.jpg';
 
   return (
     <div
@@ -75,7 +79,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               {project.title}
               <span className="cyan-dot-clean">.</span>
             </h2>
-            <p className="project-modal-subtitle">{project.subtitle}</p>
+            <p className="project-modal-subtitle">{project.subtitle}{project.year ? ` • ${project.year}` : ''}</p>
           </div>
 
           <p className="project-modal-desc">{project.description}</p>

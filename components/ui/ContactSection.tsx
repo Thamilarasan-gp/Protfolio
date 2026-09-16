@@ -10,12 +10,12 @@ interface ContactSectionProps {
 
 export function ContactSection({ onOpenContact }: ContactSectionProps) {
   return (
-    <section className="section-wrapper contact-section-wrapper" id="section-5">
+    <section className="section-wrapper contact-section-wrapper" id="section-6">
       <div className="contact-section-container">
         {/* Left Side: Timeline Node & Header */}
         <div className="contact-content-col">
           <div className="contact-timeline-rail" aria-hidden="true">
-            <span className="timeline-step-num">05</span>
+            <span className="timeline-step-num">06</span>
             <div className="timeline-node">
               <div className="timeline-node-inner" />
             </div>

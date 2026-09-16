@@ -29,7 +29,7 @@ export function Navigation({
     { name: 'Home', index: 0 },
     { name: 'Projects', index: 3 },
     { name: 'About', index: 1 },
-    { name: 'Contact', index: 5 },
+    { name: 'Contact', index: 6 },
   ];
 
   return (
@@ -47,8 +47,8 @@ export function Navigation({
             const isActive =
               (link.index === 0 && activeSection === 0) ||
               (link.index === 1 && activeSection === 1) ||
-              (link.index === 3 && (activeSection === 2 || activeSection === 3 || activeSection === 4)) ||
-              (link.index === 5 && activeSection === 5);
+              (link.index === 3 && (activeSection === 2 || activeSection === 3 || activeSection === 4 || activeSection === 5)) ||
+              (link.index === 6 && activeSection === 6);
 
             return (
               <li key={link.name} className={`hero-nav-item ${isActive ? 'active' : ''}`}>

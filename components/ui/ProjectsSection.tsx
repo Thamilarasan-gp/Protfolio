@@ -1,8 +1,8 @@
 'use client';
 
-import React from 'react';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import { Project } from '@/lib/data/projects';
+import React, { useState } from 'react';
+import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Project, PROJECTS } from '@/lib/data/projects';
 import { JourneyMode } from '@/components/animation/MasterTimeline';
 
 interface ProjectsSectionProps {
@@ -11,68 +11,35 @@ interface ProjectsSectionProps {
   onExplore?: () => void;
 }
 
-export function ProjectsSection({ onSelectProject, onExplore }: ProjectsSectionProps) {
-  const projectsList: Project[] = [
-    {
-      id: 'peakflow',
-      number: '01',
-      title: 'PeakFlow',
-      subtitle: 'Smart Planning for Smarter Living',
-      description: 'An AI-driven ecosystem automating real-time scheduling, intelligent resource planning, and seamless workflow execution.',
-      tags: ['Next.js', 'TypeScript', 'AI Agent', 'Tailwind CSS'],
-      gradient: 'linear-gradient(135deg, #0b1f3a 0%, #174276 50%, #2e75b6 100%)',
-      link: 'https://github.com/thamil-arasan/peakflow',
-      github: 'https://github.com/thamil-arasan/peakflow',
-      highlights: ['Predictive workflow automation', 'Sub-second real-time sync', 'Multi-tenant architecture'],
-      metrics: '4.8/5 productivity rating',
-    },
-    {
-      id: 'nexadapt',
-      number: '02',
-      title: 'NexAdapt',
-      subtitle: 'Health Tech Platform',
-      description: 'A compliant, modern digital health platform connecting patients with certified clinicians for encrypted telemetry, consultations, and analytics.',
-      tags: ['React', 'WebRTC', 'HIPAA Compliant', 'PostgreSQL'],
-      gradient: 'linear-gradient(135deg, #082832 0%, #0d4b56 50%, #1b8a99 100%)',
-      link: 'https://github.com/thamil-arasan/nexadapt',
-      github: 'https://github.com/thamil-arasan/nexadapt',
-      highlights: ['Encrypted HD video consultations', 'Interactive biometric telemetry', 'Automated pharmacy routing'],
-      metrics: '15,000+ virtual patient consultations',
-    },
-    {
-      id: 'himavathi',
-      number: '03',
-      title: 'Himavathi',
-      subtitle: 'Real Estate Solution',
-      description: 'A modern spatial real estate platform offering 3D architectural walk-throughs, intelligent valuation metrics, and escrow transactions.',
-      tags: ['Next.js', 'Three.js', 'Spatial 3D', 'Tailwind CSS'],
-      gradient: 'linear-gradient(135deg, #1b1233 0%, #35215c 50%, #6841a8 100%)',
-      link: 'https://github.com/thamil-arasan/himavathi',
-      github: 'https://github.com/thamil-arasan/himavathi',
-      highlights: ['Interactive 3D photorealistic tours', 'Dynamic valuation engine', 'Instant mortgage calculation'],
-      metrics: '$24M+ processed property inquiries',
-    },
-    {
-      id: 'more-projects',
-      number: '04',
-      title: 'More Projects',
-      subtitle: 'Coming Soon...',
-      description: 'An innovation lab of emerging AI tools, creative WebGL experiments, and open-source contributions crafted with precision.',
-      tags: ['WebGL', 'AI Tools', 'Experimental', 'Open Source'],
-      gradient: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)',
-      link: 'https://github.com/thamilarasan-gp',
-      github: 'https://github.com/thamilarasan-gp',
-      highlights: ['Ongoing WebGL simulations', 'Custom shader algorithms', 'AI agent experiments'],
-      metrics: 'Active exploration daily',
-    },
-  ];
+const ROTATIONS = [-3.5, 0, 3.5];
 
-  const projectImages: Record<string, string> = {
-    peakflow: '/images/project_parkeasy.jpg',
-    nexadapt: '/images/project_mediapp.jpg',
-    himavathi: '/images/project_nimmathi.jpg',
-    'more-projects': '/images/project_more.jpg',
+const projectImages: Record<string, string> = {
+  smartbus: '/images/project_smartbus.jpg',
+  smartparking: '/images/project_smartparking.jpg',
+  messmate: '/images/project_messmate.jpg',
+  anthurium: '/images/project_anthurium.jpg',
+  gdgsync: '/images/project_gdgsync.jpg',
+  journalforge: '/images/project_journalforge.jpg',
+  peakflow: '/images/project_peakflow.jpg',
+  nexadopt: '/images/project_nexadopt.jpg',
+};
+
+export function ProjectsSection({ onSelectProject, onExplore }: ProjectsSectionProps) {
+  const [startIndex, setStartIndex] = useState(0);
+
+  const handlePrev = () => {
+    setStartIndex((prev) => (prev === 0 ? PROJECTS.length - 1 : prev - 1));
   };
+
+  const handleNext = () => {
+    setStartIndex((prev) => (prev + 1) % PROJECTS.length);
+  };
+
+  // Reorder array based on startIndex to smoothly cycle 3 cards at a time
+  const displayedProjects = [
+    ...PROJECTS.slice(startIndex),
+    ...PROJECTS.slice(0, startIndex),
+  ].slice(0, 3);
 
   return (
     <section className="section-wrapper projects-section-wrapper" id="section-3">
@@ -115,39 +82,95 @@ export function ProjectsSection({ onSelectProject, onExplore }: ProjectsSectionP
           </div>
         </div>
 
-        {/* Right Side: 2x2 Grid of Cards */}
+        {/* Right Side: Cascading Fanned Cards Showcase with Script Accent & Nav */}
         <div className="projects-cards-col">
-          <div className="projects-2x2-grid">
-            {projectsList.map((p) => (
-              <div
-                key={p.id}
-                className="project-story-card"
-                onClick={() => onSelectProject(p)}
-                role="button"
-                tabIndex={0}
-              >
-                {/* Background Image with Ambient Gradient Scrim */}
-                <div
-                  className="project-card-image"
-                  style={{
-                    backgroundImage: `url('${projectImages[p.id] || '/images/project_parkeasy.jpg'}')`,
-                  }}
-                />
-                <div className="project-card-scrim" />
-
-                {/* Info and Circular Arrow */}
-                <div className="project-card-bottom-bar">
-                  <div className="project-meta-info">
-                    <h3 className="project-headline">{p.title}</h3>
-                    <p className="project-tagline">{p.subtitle}</p>
-                  </div>
-
-                  <div className="project-circle-arrow-btn">
-                    <ArrowUpRight size={16} className="circle-arrow-icon" />
-                  </div>
-                </div>
+          <div className="projects-deck-outer">
+            {/* Left Hand-drawn Script Accent */}
+            <div className="projects-script-note" aria-hidden="true">
+              <div className="script-text">
+                <span>From</span>
+                <span>Ideas</span>
+                <span className="script-indent"><span className="script-to">to</span> Impact</span>
               </div>
-            ))}
+              <svg className="script-arrow" viewBox="0 0 65 50" fill="none">
+                <path
+                  d="M10 8 C 15 30, 35 42, 54 44"
+                  stroke="#ffffff"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M44 37 L 55 44 L 46 51"
+                  stroke="#ffffff"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+
+            {/* Cards Deck & Centered Nav */}
+            <div className="projects-deck-and-nav">
+              {/* Fanned Cards Row */}
+              <div className="projects-fanned-deck">
+                {displayedProjects.map((p, idx) => (
+                  <div
+                    key={p.id}
+                    className="project-polaroid-card"
+                    style={{
+                      '--card-rotation': `${ROTATIONS[idx % ROTATIONS.length]}deg`,
+                      zIndex: idx + 1,
+                    } as React.CSSProperties}
+                    onClick={() => onSelectProject(p)}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`View ${p.title} project details`}
+                  >
+                    {/* Top Image Preview Frame */}
+                    <div className="polaroid-image-frame">
+                      <div
+                        className="polaroid-image"
+                        style={{
+                          backgroundImage: `url('${projectImages[p.id] || '/images/project_smartbus.jpg'}')`,
+                        }}
+                      />
+                    </div>
+
+                    {/* Bottom Caption Bar */}
+                    <div className="polaroid-caption">
+                      <div className="polaroid-titles">
+                        <h3 className="polaroid-title">{p.title}</h3>
+                        <span className="polaroid-subtitle">{p.subtitle}{p.year ? ` • ${p.year}` : ''}</span>
+                      </div>
+
+                      <div className="polaroid-arrow-icon" aria-hidden="true">
+                        <ArrowUpRight size={14} />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom Deck Navigation Buttons - Centered directly under the 3 cards */}
+              <div className="projects-deck-nav">
+                <button
+                  type="button"
+                  className="deck-nav-btn"
+                  onClick={handlePrev}
+                  aria-label="Previous project"
+                >
+                  <ChevronLeft size={20} />
+                </button>
+                <button
+                  type="button"
+                  className="deck-nav-btn"
+                  onClick={handleNext}
+                  aria-label="Next project"
+                >
+                  <ChevronRight size={20} />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

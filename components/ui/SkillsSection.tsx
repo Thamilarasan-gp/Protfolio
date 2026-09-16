@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { JourneyMode } from '@/components/animation/MasterTimeline';
+import { OrbitalSkills } from './OrbitalSkills';
 
 interface SkillsSectionProps {
   mode?: JourneyMode;
@@ -242,35 +243,9 @@ export function SkillsSection({ onExplore }: SkillsSectionProps) {
           </div>
         </div>
 
-        {/* Right Side: Categorized Glass Cards Stack */}
-        <div className="skills-cards-col">
-          <div className="skills-categories-stack">
-            {skillCategories.map((cat) => (
-              <div key={cat.category} className="skills-category-card">
-                <div className="category-header">
-                  <span className="category-title">{cat.category}</span>
-                  <ChevronRight size={16} className="category-chevron" />
-                </div>
-
-                <div className="category-items-row">
-                  {cat.skills.map((s) => (
-                    <div key={s.name} className="skill-app-tile">
-                      <div
-                        className="tile-icon-box"
-                        style={{
-                          background: s.bg,
-                          borderColor: s.border,
-                        }}
-                      >
-                        {s.svg}
-                      </div>
-                      <span className="tile-name">{s.name}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Right Side: Circular Orbital Skills Showcase */}
+        <div className="skills-cards-col skills-orbital-col">
+          <OrbitalSkills />
         </div>
       </div>
     </section>

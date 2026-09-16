@@ -10,6 +10,7 @@ import { AboutSection } from '@/components/ui/AboutSection';
 import { SkillsSection } from '@/components/ui/SkillsSection';
 import { ProjectsSection } from '@/components/ui/ProjectsSection';
 import { JourneySection } from '@/components/ui/JourneySection';
+import { AchievementsSection } from '@/components/ui/AchievementsSection';
 import { ContactSection } from '@/components/ui/ContactSection';
 import { CinematicOverlay } from '@/components/ui/CinematicOverlay';
 import { Scrubber } from '@/components/ui/Scrubber';
@@ -67,11 +68,12 @@ export default function Home() {
   }, []);
 
   const scrollToSection = useCallback((index: number) => {
-    // In climb mode, section index 0 (Ground) is at bottom (#section-5), index 5 (Summit) is at top (#section-0)
-    const targetDomIndex = modeRef.current === 'climb' ? (5 - index) : index;
+    // In climb mode, section index 0 (Ground) is at bottom (#section-6), index 6 (Summit) is at top (#section-0)
+    const targetDomIndex = modeRef.current === 'climb' ? (6 - index) : index;
     const sectionElem = document.getElementById(`section-${targetDomIndex}`);
     if (sectionElem && lenisRef.current) {
       lenisRef.current.scrollTo(sectionElem, {
+        offset: -15,
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       });
@@ -108,7 +110,7 @@ export default function Home() {
         {/* Dynamic Chalk & Brush Slogans (Commented out per user request) */}
         {/* <CinematicOverlay activeSection={activeSection} mode={mode} /> */}
 
-        {/* Milestone Scrubber (Vertical Indicator Dots for the 6 Sections) */}
+        {/* Milestone Scrubber (Vertical Indicator Dots for the 7 Sections) */}
         <Scrubber
           activeSection={activeSection}
           onSelectSection={scrollToSection}
@@ -142,6 +144,11 @@ export default function Home() {
           <JourneySection
             mode={mode}
             onExplore={() => scrollToSection(5)}
+          />
+
+          <AchievementsSection
+            mode={mode}
+            onExplore={() => scrollToSection(6)}
           />
 
           <ContactSection onOpenContact={() => setIsContactOpen(true)} />
