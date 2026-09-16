@@ -1,0 +1,46 @@
+Video duration: 30.00s
+FPS: 24.00
+Frames: 720
+Keyframes: 41
+
+01. 00.00s - 01 Hero: Seated on cliff edge, looking over majestic snow mountains. Slogans: "DREAM BUILD REPEAT", "BIGGER THAN WHAT I IMAGINED". Rope anchored to rock, hanging down.
+02. 00.75s - Camera begins subtle pan, wind blowing character's jacket, atmosphere alive with drifting clouds.
+03. 01.50s - Look-at focus shifting toward abyss, preparation for the leap / rope descent.
+04. 02.25s - Character shifts posture, leaning over the edge.
+05. 03.00s - 02 About Me: "TAKE THE LEAP" / "GOOD THINGS TAKE COURAGE". The leap initiates!
+06. 03.75s - Character launches into mid-air, diving forward with backpack and outstretched arms.
+07. 04.50s - Camera follows in dynamic dive angle, foreground rocks rushing past.
+08. 05.25s - High-speed tracking shot into open sky, mountains parallaxing steeply.
+09. 06.00s - Peak airborne arch, body horizontal, soaring over cloud deck.
+10. 06.75s - Camera banks slightly to reframe against the snowy massif.
+11. 07.50s - 03 Skills: "BIGGER IDEAS HIGHER POSSIBILITIES" / "SKILLS FUEL FREEDOM".
+12. 08.25s - Freefall soaring posture, wind rush, legs stabilizing.
+13. 09.00s - Passing through upper cumulus cloud layers.
+14. 09.75s - Camera glides around character to showcase wide panoramic vista.
+15. 10.50s - Controlled glide, arms slightly sweeping back.
+16. 11.25s - Transition into mountain canyon passage.
+17. 12.00s - 04 Projects: "IDEAS INTO IMPACT" / "HIGHER IDEAS BRIGHTER SOLUTIONS".
+18. 12.75s - Steep diving camera following character descent between two dramatic rock walls.
+19. 13.50s - Midground mountain ridge sweeps into view with crisp snow shadows.
+20. 14.25s - Character rotates slightly, banking through the alpine canyon.
+21. 15.00s - Foreground cloud wisps rush directly across the camera lens.
+22. 15.75s - Sunlight flare hits camera lens over the snowy summit edge.
+23. 16.50s - Camera tilts down to reveal the rocky plateau below.
+24. 17.25s - 05 Journey: "DISCIPLINE CREATES FREEDOM" / "CONSISTENCY CREATES FREEDOM".
+25. 18.00s - Character shifts posture from horizontal dive to vertical deceleration approach.
+26. 18.75s - Knees tucking, boots extending towards the landing rock surface.
+27. 19.50s - Ground detail sharpens, shadows of character lengthen on the rocks.
+28. 20.25s - Camera sweeps down to ground level in high-speed arrival.
+29. 21.00s - Preparing for touchdown, arms flexing for impact absorption.
+30. 21.75s - Milliseconds before impact, tension builds.
+31. 22.50s - 06 Contact: TOUCHDOWN! Superhero 3-point landing!
+32. 23.25s - Shockwave burst: dust and rock particles explode outward radially.
+33. 24.00s - One knee down, one hand planted on the granite rock, head tilted up in heroic focus.
+34. 24.75s - Slogan stamped: "SAME KID BIGGER DREAMS."
+35. 25.50s - Dust clears gradually into the crisp alpine breeze.
+36. 26.25s - Low-angle hero camera framing character with glowing snow-capped peaks in the background.
+37. 27.00s - Interactive contact controls ("Say Hello", social links) settle into view.
+38. 27.75s - Subtle idle breathing animation in the 3-point pose, wind rippling clothing.
+39. 28.50s - Golden hour/alpine daylight illumination illuminating the summit ridge.
+40. 29.25s - Final composition locks into high-impact portfolio hero finale.
+41. 29.95s - End of 30-second sequence.
