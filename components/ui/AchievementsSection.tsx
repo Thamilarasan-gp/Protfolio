@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import { 
-  Trophy, 
-  Sparkles, 
-  ArrowRight, 
+import {
+  Trophy,
+  Sparkles,
+  ArrowRight,
   Award,
   Medal,
   Calendar,
@@ -146,8 +146,8 @@ export function AchievementsSection({ onExplore }: AchievementsSectionProps) {
         <div className="achievements-showcase-col">
           <div className="achieve-black-cards-grid">
             {HACKATHONS.map((item) => (
-              <div 
-                key={item.id} 
+              <div
+                key={item.id}
                 className={`achieve-black-card ${item.highlight ? 'highlight-gold' : ''}`}
               >
                 {/* Top Badge Bar */}
@@ -164,7 +164,7 @@ export function AchievementsSection({ onExplore }: AchievementsSectionProps) {
 
                 {/* Card Title & Institution */}
                 <h3 className="achieve-item-title-black">{item.title}</h3>
-                
+
                 <div className="achieve-institution-row">
                   <Building2 size={13} className="institution-icon" />
                   <span className="achieve-item-institution-black">{item.institution}</span>

@@ -182,7 +182,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.2rem 4rem 1.5rem 4.5rem;
+  padding: 2.2rem 4rem 1.5rem 7.5rem;
   background: transparent;
   pointer-events: auto;
 }
@@ -3222,6 +3222,7 @@ body {
   0% {
     transform: translate3d(0, 0, 0);
   }
+
   100% {
     transform: translate3d(-50%, 0, 0);
   }
@@ -3592,14 +3593,17 @@ body {
 /* Responsive adjustments */
 @media (max-width: 1200px) {
   .hero-nav-header {
-    padding: 1.8rem 2.5rem 1.2rem 2.8rem;
+    padding: 1.8rem 2.5rem 1.2rem 7.5rem;
   }
+
   .hero-nav-menu {
     gap: 1.5rem;
   }
+
   .hero-nav-list {
     gap: 1.15rem;
   }
+
   .hero-nav-item button {
     font-size: 0.88rem;
   }
@@ -3607,7 +3611,7 @@ body {
 
 @media (max-width: 1024px) {
   .hero-nav-header {
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 2rem 1.5rem 6rem;
   }
 
   .hero-nav-list {
@@ -4349,6 +4353,7 @@ body {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  padding-left: 2rem;
 }
 
 .ticker-dash {
@@ -5208,4 +5213,4 @@ body {
 .portfolio-swal-btn:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 24px rgba(2, 132, 199, 0.6) !important;
-}
+}

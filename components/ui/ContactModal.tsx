@@ -48,7 +48,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
       data.append('message', formData.message);
       data.append('subject', `New Portfolio Message from ${formData.name}`);
       data.append('from_name', `${formData.name} (Portfolio)`);
-
+      
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: data,
