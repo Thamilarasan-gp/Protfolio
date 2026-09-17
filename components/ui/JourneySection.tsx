@@ -1,11 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import {
   Users2,
   Sparkles,
   ArrowRight,
+  ArrowUpRight,
   Calendar,
   CheckCircle2,
   Flame,
@@ -20,6 +21,52 @@ interface JourneySectionProps {
 }
 
 export function JourneySection({ onExplore }: JourneySectionProps) {
+  const [stats, setStats] = useState({
+    leetcode: {
+      totalSolved: 527,
+      rating: 1866,
+      topPercentage: 5.81,
+      globalRanking: 189040,
+      url: 'https://leetcode.com/u/thamilarasangp/',
+    },
+    skillrack: {
+      solved: 720,
+      rank: 43029,
+      url: 'https://www.skillrack.com/faces/resume.xhtml?id=484668&key=262cac8aa817e03417f620f487c0e526d5a868cf',
+    },
+    hackerrank: {
+      badge: 'C++ 5-Star',
+      stars: 5,
+      url: 'https://www.hackerrank.com/profile/thamilarasan_gp1',
+    },
+  });
+
+  useEffect(() => {
+    let isMounted = true;
+    async function loadStats() {
+      try {
+        const res = await fetch('/api/cp-stats');
+        if (res.ok) {
+          const data = await res.json();
+          if (isMounted && data) {
+            setStats((prev) => ({
+              ...prev,
+              leetcode: { ...prev.leetcode, ...(data.leetcode || {}) },
+              skillrack: { ...prev.skillrack, ...(data.skillrack || {}) },
+              hackerrank: { ...prev.hackerrank, ...(data.hackerrank || {}) },
+            }));
+          }
+        }
+      } catch (err) {
+        console.error('Failed to load live CP stats:', err);
+      }
+    }
+    loadStats();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   return (
     <section className="section-wrapper journey-section-wrapper" id="section-4">
       <div className="journey-section-container">
@@ -38,29 +85,14 @@ export function JourneySection({ onExplore }: JourneySectionProps) {
 
             <h2 className="journey-main-headline">
               A path of <br />
-              leadership & <br />
-              mastery<span className="cyan-dot-clean">.</span>
+              persistence &amp; <br />
+              problem-solving<span className="cyan-dot-clean">.</span>
             </h2>
 
             <p className="journey-bio-desc">
-              From solving 1,200+ algorithmic challenges to serving as GDG App Development Lead, mentoring developers, and orchestrating premier collegiate tech hackathons.
+              Dedicated competitive programmer with a passion for algorithms and data structures.
+              Proven track record across global platforms with hundreds of solved challenges.
             </p>
-
-            {/* Quick Journey Metric Highlights */}
-            <div className="journey-metrics-summary">
-              <div className="journey-metric-chip">
-                <Flame size={14} className="metric-chip-icon flame" />
-                <span>1,200+ DSA Solved</span>
-              </div>
-              <div className="journey-metric-chip">
-                <Users2 size={14} className="metric-chip-icon cyan" />
-                <span>GDG App Lead</span>
-              </div>
-              <div className="journey-metric-chip">
-                <Sparkles size={14} className="metric-chip-icon gold" />
-                <span>4 Tech Hackathons</span>
-              </div>
-            </div>
 
             <div className="journey-cta-row">
               <button
@@ -82,7 +114,16 @@ export function JourneySection({ onExplore }: JourneySectionProps) {
             {/* 3 Visual Platform Cards (LeetCode, SkillRack, HackerRank) */}
             <div className="cp-trio-grid">
               {/* Card 01: LeetCode */}
-              <div className="cp-trio-card cp-white-card">
+              <a
+                href={stats.leetcode.url}
+                target="_blank"
+                rel="noreferrer"
+                className="cp-trio-card cp-white-card"
+                title="View LeetCode Profile (@thamilarasangp)"
+              >
+                <div className="cp-card-arrow-badge" aria-label="Open profile">
+                  <ArrowUpRight size={13} strokeWidth={2.4} className="cp-arrow-icon" />
+                </div>
                 <div className="cp-badge-floating leetcode-badge" title="LeetCode">
                   <img
                     src="/images/LeetCode_logo_rvs.png"
@@ -93,25 +134,27 @@ export function JourneySection({ onExplore }: JourneySectionProps) {
                   />
                 </div>
                 <div className="cp-platform-brand-row">
-                  <img
-                    src="/images/LeetCode_logo_rvs.png"
-                    alt="LeetCode"
-                    width={20}
-                    height={20}
-                    className="cp-inline-logo"
-                  />
                   <span className="cp-platform-name">LeetCode</span>
                 </div>
-                <div className="cp-card-metric">500+</div>
+                <div className="cp-card-metric">{stats.leetcode.totalSolved}+</div>
                 <div className="cp-card-label">Problems Solved</div>
                 <div className="cp-card-divider" />
-                <div className="cp-card-highlight">Top 5.39%</div>
-                <div className="cp-card-substat">Rating 1,866</div>
+                <div className="cp-card-highlight">Top {stats.leetcode.topPercentage}%</div>
+                <div className="cp-card-substat">Rating {stats.leetcode.rating.toLocaleString()}</div>
                 <div className="cp-watermark">01</div>
-              </div>
+              </a>
 
               {/* Card 02: SkillRack (#00468B Theme) */}
-              <div className="cp-trio-card cp-gradient-card">
+              <a
+                href={stats.skillrack.url}
+                target="_blank"
+                rel="noreferrer"
+                className="cp-trio-card cp-gradient-card"
+                title="View SkillRack Verified Resume"
+              >
+                <div className="cp-card-arrow-badge" aria-label="Open profile">
+                  <ArrowUpRight size={13} strokeWidth={2.4} className="cp-arrow-icon" />
+                </div>
                 <div className="cp-badge-floating skillrack-badge" title="SkillRack">
                   <Image
                     src="/images/skillrack_icon.png"
@@ -122,15 +165,24 @@ export function JourneySection({ onExplore }: JourneySectionProps) {
                   />
                 </div>
                 <div className="cp-platform-name white-text">SkillRack</div>
-                <div className="cp-card-metric white-text">700+</div>
-                <div className="cp-card-label blue-label">Problems Solved</div>
+                <div className="cp-card-metric white-text">{stats.skillrack.solved}+</div>
+                <div className="cp-card-label blue-label">Programs Solved</div>
                 <div className="cp-card-divider blue-divider" />
-                <div className="cp-card-highlight white-text">Rank 40,012</div>
+                <div className="cp-card-highlight white-text">Rank {stats.skillrack.rank.toLocaleString()}</div>
                 <div className="cp-watermark blue-watermark">02</div>
-              </div>
+              </a>
 
               {/* Card 03: HackerRank */}
-              <div className="cp-trio-card cp-white-card">
+              <a
+                href={stats.hackerrank.url}
+                target="_blank"
+                rel="noreferrer"
+                className="cp-trio-card cp-white-card"
+                title="View HackerRank Profile (@thamilarasan_gp1)"
+              >
+                <div className="cp-card-arrow-badge" aria-label="Open profile">
+                  <ArrowUpRight size={13} strokeWidth={2.4} className="cp-arrow-icon" />
+                </div>
                 <div className="cp-badge-floating hackerrank-badge" title="HackerRank">
                   <HackerRankIcon size={24} />
                 </div>
@@ -143,18 +195,16 @@ export function JourneySection({ onExplore }: JourneySectionProps) {
                     className="cp-platform-brand-img"
                   />
                 </div>
-                <div className="cp-card-metric text-small-title">C++ 5-Star</div>
-                <div className="cp-stars-row" aria-label="5 stars">
-                  <Star size={11} className="star-gold" />
-                  <Star size={11} className="star-gold" />
-                  <Star size={11} className="star-gold" />
-                  <Star size={11} className="star-gold" />
-                  <Star size={11} className="star-gold" />
+                <div className="cp-card-metric text-small-title">{stats.hackerrank.badge}</div>
+                <div className="cp-stars-row" aria-label={`${stats.hackerrank.stars} stars`}>
+                  {Array.from({ length: stats.hackerrank.stars }).map((_, i) => (
+                    <Star key={i} size={11} className="star-gold" />
+                  ))}
                 </div>
                 <div className="cp-card-divider" />
                 <div className="cp-card-substat">3+ Certificates</div>
                 <div className="cp-watermark">03</div>
-              </div>
+              </a>
             </div>
             {/* Milestone 2: GDG Leadership & Mentorship */}
             <div className="journey-milestone-card">

@@ -14,14 +14,10 @@ interface ProjectsSectionProps {
 const ROTATIONS = [-3.5, 0, 3.5];
 
 const projectImages: Record<string, string> = {
-  smartbus: '/images/project_smartbus.jpg',
-  smartparking: '/images/project_smartparking.jpg',
-  messmate: '/images/project_messmate.jpg',
-  anthurium: '/images/project_anthurium.jpg',
-  gdgsync: '/images/project_gdgsync.jpg',
-  journalforge: '/images/project_journalforge.jpg',
-  peakflow: '/images/project_peakflow.jpg',
-  nexadopt: '/images/project_nexadopt.jpg',
+  smartbus: '/images/projects_imgs/Busmate.png',
+  smartparking: '/images/projects_imgs/Nammaspot.png',
+  messmate: '/images/projects_imgs/Messmate.png',
+  anthurium: '/images/projects_imgs/Anthurium.png',
 };
 
 export function ProjectsSection({ onSelectProject, onExplore }: ProjectsSectionProps) {
@@ -131,7 +127,7 @@ export function ProjectsSection({ onSelectProject, onExplore }: ProjectsSectionP
                       <div
                         className="polaroid-image"
                         style={{
-                          backgroundImage: `url('${projectImages[p.id] || '/images/project_smartbus.jpg'}')`,
+                          backgroundImage: `url('${p.image || projectImages[p.id] || '/images/projects_imgs/Busmate.png'}')`,
                         }}
                       />
                     </div>
@@ -145,6 +141,18 @@ export function ProjectsSection({ onSelectProject, onExplore }: ProjectsSectionP
 
                       <div className="polaroid-arrow-icon" aria-hidden="true">
                         <ArrowUpRight size={14} />
+                      </div>
+                    </div>
+
+                    {/* Mobile-Only Extended Content */}
+                    <div className="polaroid-mobile-details">
+                      <p className="polaroid-mobile-desc">{p.description}</p>
+                      <div className="polaroid-mobile-tags">
+                        {p.tags.slice(0, 3).map((tag) => (
+                          <span key={tag} className="polaroid-tag-chip">
+                            {tag}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </div>

@@ -178,6 +178,27 @@ export function AchievementsSection({ onExplore }: AchievementsSectionProps) {
           </div>
         </div>
       </div>
+
+      {/* Achievement Photo Collage Ribbon (Below Hackathons & Wins) */}
+      <div className="achieve-collage-ribbon-container">
+        <div className="achieve-collage-ribbon-track">
+          <img
+            src="/images/achievement_collage_ribbon.webp"
+            alt="Hackathon Wins & Achievements Collage"
+            className="achieve-collage-ribbon-img"
+            loading="lazy"
+          />
+          <img
+            src="/images/achievement_collage_ribbon.webp"
+            alt="Hackathon Wins & Achievements Collage"
+            className="achieve-collage-ribbon-img"
+            loading="lazy"
+          />
+        </div>
+
+        {/* Cinematic dark edge vignettes & glass reflection */}
+        <div className="achieve-collage-ribbon-overlay" />
+      </div>
     </section>
   );
 }

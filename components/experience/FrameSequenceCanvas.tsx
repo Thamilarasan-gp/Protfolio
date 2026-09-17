@@ -18,6 +18,7 @@ export function FrameSequenceCanvas({
   mode = 'leap',
   onModeChange,
   onLoadingComplete,
+  activeSection = 0,
 }: FrameSequenceCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [loadProgress, setLoadProgress] = useState(0);

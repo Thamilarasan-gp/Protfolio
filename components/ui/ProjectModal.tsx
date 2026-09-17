@@ -11,14 +11,10 @@ interface ProjectModalProps {
 }
 
 const projectImages: Record<string, string> = {
-  smartbus: '/images/project_smartbus.jpg',
-  smartparking: '/images/project_smartparking.jpg',
-  messmate: '/images/project_messmate.jpg',
-  anthurium: '/images/project_anthurium.jpg',
-  gdgsync: '/images/project_gdgsync.jpg',
-  journalforge: '/images/project_journalforge.jpg',
-  peakflow: '/images/project_peakflow.jpg',
-  nexadopt: '/images/project_nexadopt.jpg',
+  smartbus: '/images/projects_imgs/Busmate.png',
+  smartparking: '/images/projects_imgs/Nammaspot.png',
+  messmate: '/images/projects_imgs/Messmate.png',
+  anthurium: '/images/projects_imgs/Anthurium.png',
 };
 
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
@@ -38,7 +34,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   if (!project) return null;
 
-  const imageSrc = projectImages[project.id] || '/images/project_smartbus.jpg';
+  const imageSrc = project.image || projectImages[project.id] || '/images/projects_imgs/Busmate.png';
 
   return (
     <div
@@ -121,24 +117,40 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {/* Action Buttons */}
           <div className="project-modal-actions">
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noreferrer"
-              className="modal-action-btn primary"
-            >
-              <span>Live Experience</span>
-              <ExternalLink size={16} />
-            </a>
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noreferrer"
-              className="modal-action-btn secondary"
-            >
-              <GithubIcon size={16} />
-              <span>Source Code</span>
-            </a>
+            {project.link ? (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                className="modal-action-btn primary"
+              >
+                <span>Live Experience</span>
+                <ExternalLink size={16} />
+              </a>
+            ) : null}
+            {project.adminLink ? (
+              <a
+                href={project.adminLink}
+                target="_blank"
+                rel="noreferrer"
+                className="modal-action-btn primary"
+                style={{ background: '#0284c7', borderColor: '#0284c7' }}
+              >
+                <span>Admin Portal</span>
+                <ExternalLink size={16} />
+              </a>
+            ) : null}
+            {project.github ? (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="modal-action-btn secondary"
+              >
+                <GithubIcon size={16} />
+                <span>Source Code</span>
+              </a>
+            ) : null}
           </div>
         </div>
       </div>
