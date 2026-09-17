@@ -27,8 +27,11 @@ export function Navigation({
 
   const navLinks = [
     { name: 'Home', index: 0 },
-    { name: 'Projects', index: 3 },
     { name: 'About', index: 1 },
+    { name: 'Skills', index: 2 },
+    { name: 'Projects', index: 3 },
+    { name: 'Journey', index: 4 },
+    { name: 'Awards', index: 5 },
     { name: 'Contact', index: 6 },
   ];
 
@@ -44,11 +47,7 @@ export function Navigation({
       <nav className="hero-nav-menu">
         <ul className="hero-nav-list">
           {navLinks.map((link) => {
-            const isActive =
-              (link.index === 0 && activeSection === 0) ||
-              (link.index === 1 && activeSection === 1) ||
-              (link.index === 3 && (activeSection === 2 || activeSection === 3 || activeSection === 4 || activeSection === 5)) ||
-              (link.index === 6 && activeSection === 6);
+            const isActive = activeSection === link.index;
 
             return (
               <li key={link.name} className={`hero-nav-item ${isActive ? 'active' : ''}`}>
